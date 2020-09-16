@@ -1,0 +1,24 @@
+# Template information section
+name: "TrueMVC"
+summary: "There is a lot of controversy around the best architecture, everyone will name at least 3 of their favorites, besides there is a popular opinion that mvc is unsuitable, but I'll tell you what, you just don't know how to cook it!"
+author: "Серый aka JamCocos"
+version: "1.0.0"
+license: "MIT"
+
+# The declarations for code files
+code_files:
+- {name: ViewModel/ViewModel.swift, path: Code/ViewModel.liquid}
+- {name: View/Localization/Localization.swift, path: Code/Localization.liquid}
+- {name: View/Cells}
+- {name: View/Views}
+- {name: View/.storyboard, path: Code/Storyboard.liquid}
+- {name: ModuleAssembly.swift, path: Code/Assembly.liquid}
+- {name: ModuleInput.swift, path: Code/Input.liquid}
+- {name: ModuleOutput.swift, path: Code/Output.liquid}
+- {name: DataProvider.swift, path: Code/Provider.liquid}
+- {name: DataSource.swift, path: Code/ViewDataSource.liquid}
+- {name: ViewController.swift, path: Code/ViewController.liquid}
+
+# Template dependencies
+dependencies:
+- Swinject

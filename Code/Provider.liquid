@@ -1,0 +1,36 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import Foundation
+
+protocol {{ module_info.name }}DataProviderDelegate: class {
+    
+}
+
+final class {{ module_info.name }}DataProvider {
+    
+    // MARK: - DataTypes
+
+    // Errors in receiving/processing data.
+    enum Error: Swift.Error {
+    	
+    }
+
+    // MARK: - Public
+
+    weak var delegate: {{ module_info.name }}DataProviderDelegate?
+
+    // MARK: - Private
+
+}
+
+// MARK: - Public-Methods
+
+extension {{ module_info.name }}DataProvider {
+	
+}

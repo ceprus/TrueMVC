@@ -1,0 +1,22 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import Foundation
+
+extension Localization {
+    
+    /// {{ module_info.name }} Module.
+    enum {{ module_info.name }} {
+        
+        private static let table = "{{ module_info.name }}"
+        
+        /// Title: {{ module_info.name }}.
+        static let title = get(table, key: "title", default: "{{ module_info.name }}")
+        
+    }
+}

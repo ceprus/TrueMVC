@@ -1,0 +1,72 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+protocol {{ module_info.name }}DataSourceDelegate: UITableViewDelegate {
+    
+    /// Provide a TableView in the closure for registering cells and other configure.
+    func setupView(closure: @escaping (UITableView?) -> Void)
+    
+}
+
+// Data presentation class.
+final class {{ module_info.name }}DataSource: NSObject {
+
+	// MARK: - DataTypes
+
+	// MARK: - Public
+
+	weak var delegate: {{ module_info.name }}DataSourceDelegate!
+	
+	// MARK: - Private
+
+	private weak var tableView: UITableView?
+}
+
+// MARK: - Public-Methods
+
+extension {{ module_info.name }}DataSource {
+
+    /// Present viewmodel to view.
+    func present(viewModel: {{ module_info.name }}ViewModel) {
+        
+        if nil == self.tableView {
+            self.delegate.setupView { self.setup($0) }
+        }
+
+    }
+}
+
+// MARK: - UITableViewDataSource
+
+extension {{ module_info.name }}DataSource: UITableViewDataSource {
+	
+}
+
+// MARK: - UITableViewDelegate
+
+extension {{ module_info.name }}DataSource: UITableViewDelegate { 
+	
+}
+
+// MARK: - Private-Helper-Methods
+
+private extension {{ module_info.name }}DataSource {
+
+	func setup(_ tableView: UITableView?) {
+        
+        guard nil == self.tableView else { return }
+        
+        // Register cells.
+        <#tableView?.register({{ module_info.name }}TableCell.self)#>
+        
+        self.tableView = tableView
+    }
+}
+

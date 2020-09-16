@@ -1,0 +1,69 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+final class {{ module_info.name }}ViewController: UIViewController {
+
+	// MARK: - DataTypes
+
+	// MARK: - IBOutlet
+
+	@IBOutlet private weak var tableView: UITableView!
+
+	// MARK: - Public
+
+	var provider: {{ module_info.name }}DataProvider!
+
+	var dataSource: {{ module_info.name }}DataSource!
+
+	// MARK: - Private
+
+	private weak var output: {{ module_info.name }}ModuleOutput?
+
+	// MARK: - UIViewController-Life-Cicle
+
+	override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.title = Localization.{{ module_info.name }}.title
+
+        self.tableView.dataSource = self.dataSource
+        self.tableView.delegate = self.dataSource
+    }
+}
+
+// MARK: - ModuleInput
+
+extension {{ module_info.name }}ViewController: {{ module_info.name }}ModuleInput {
+
+}
+
+// MARK: - Outputs
+
+extension {{ module_info.name }}ViewController: <#AnotherModuleOutput#> {
+
+}
+
+// MARK: - Provider
+
+extension {{ module_info.name }}ViewController: {{ module_info.name }}DataProviderDelegate {
+
+}
+
+// MARK: - DataSource
+
+extension {{ module_info.name }}ViewController: {{ module_info.name }}DataSourceDelegate {
+
+}
+
+// MARK: - Private-Helper-Methods
+
+private extension {{ module_info.name }}ViewController {
+
+}

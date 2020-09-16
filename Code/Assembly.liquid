@@ -1,0 +1,46 @@
+//
+//  {{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+import Swinject
+
+typealias {{ module_info.name }}Module = UIViewController & {{ module_info.name }}ModuleInput
+
+final class {{ module_info.name }}ModuleAssembly {
+    
+    // MARK: - Public
+
+    class var module: {{ module_info.name }}Module {
+        return AppAssembly.assembler.resolver.resolve({{ module_info.name }}Module.self)!
+    }
+
+    // MARK: - inject
+
+    internal class func register(in container: Container) {
+
+        container.register({{ module_info.name }}Module.self) { resolver in
+            
+	        let provider = {{ module_info.name }}DataProvider()
+	        let dataSource = {{ module_info.name }}DataSource()
+	        
+	        let storyboard = UIStoryboard(name: "{{ module_info.name }}", bundle: nil)
+	        let controller = storyboard.instantiateInitialViewController() as! {{ module_info.name }}ViewController
+	        
+	        provider.delegate = controller
+	        
+	        dataSource.delegate = controller
+	        
+	        controller.provider = provider
+	        controller.dataSource = dataSource
+	        
+	        return controller
+
+        }.inObjectScope(.weak)
+    }
+
+}
