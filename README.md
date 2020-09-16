@@ -5,7 +5,7 @@
 Add to **Rambafile** of project: 
 ```liquid
 templates:
-#- {name: TrueMVC, git: 'https://github.com/rsbw/TrueMVC'}
+#- {name: TrueMVC, git: 'https://github.com/rsbw/TrueMVC.git'}
 ```
 
 ### Using
